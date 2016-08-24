@@ -22,7 +22,13 @@
             android:label="Yoda Speak">
         </activity>
         <activity android:name=".JokesActivity"
-            android:label="Jokes and Puns"></activity>
+            android:label="Jokes and Puns">
+
+        </activity>
+        <activity android:name=".Quotes_Activity"
+            android:label="QUOTES">
+
+        </activity>
     </application>
 
 </manifest>

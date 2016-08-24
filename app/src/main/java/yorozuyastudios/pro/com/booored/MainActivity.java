@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button yoda, movie, jokes, cats;
+    private Button yoda, movie, jokes, cats, quotes;
     TextView tv;
 
     @Override
@@ -61,6 +61,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 return true;
             }
         });
+
+        quotes = (Button) findViewById(R.id.quotes_button);
+        quotes.setOnClickListener(this);
+        quotes.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String str = getResources().getString(R.string.quotes);
+                initiatePopupWindow(str);
+                return true;
+            }
+        });
+
     }
 
     public void initiatePopupWindow(String str) {
@@ -94,6 +106,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 Intent i1 = new Intent(MainActivity.this, JokesActivity.class);
                 startActivity(i1);
                 break;
+            case R.id.quotes_button:
+                Intent i3 = new Intent(MainActivity.this, Quotes_Activity.class);
+                startActivity(i3);
+                break;
+
         }
 
     }

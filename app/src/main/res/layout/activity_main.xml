@@ -3,41 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="yorozuyastudios.pro.com.booored.MainActivity">
 
-   <Button
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="YODA SPEAK"
-       android:id="@+id/yoda_button"
-       android:longClickable="true"
-       android:layout_weight="1"/>
+    <Button
+        android:id="@+id/yoda_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:longClickable="true"
+        android:text="YODA SPEAK" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CAT PICS"
         android:id="@+id/cat_pics"
-        android:longClickable="true"
-        android:layout_weight="1"/>
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="THE REALLY OUGH MOVIE QUIZ"
+        android:layout_weight="1"
+        android:longClickable="true"
+        android:text="CAT PICS" />
+
+    <Button
         android:id="@+id/movie_quiz_button"
-        android:longClickable="true"
-        android:layout_weight="1"/>
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="JOKES AND PUNS"
-        android:id="@+id/jokes_button"
+        android:layout_weight="1"
         android:longClickable="true"
-        android:layout_weight="1"/>
+        android:text="THE REALLY TOUGH MOVIE QUIZ" />
+
+    <Button
+        android:id="@+id/jokes_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:longClickable="true"
+        android:text="JOKES AND PUNS" />
+
+    <Button
+        android:id="@+id/quotes_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:longClickable="true"
+        android:text="RANDOM QUOTES" />
 
 </LinearLayout>

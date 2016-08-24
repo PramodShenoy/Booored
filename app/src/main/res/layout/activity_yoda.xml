@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yoda_bg"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter text"
+        android:textColor="#FFFFFF"
+        android:id="@+id/enter_text"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/initiate_button"
+        android:text="SPEAK LIKE YODA!"
+        android:layout_below="@+id/enter_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:text="yoda speak"
+        android:id="@+id/yoda_speak_view"
+        android:textSize="25sp"
+        android:layout_alignParentBottom="true"
+        android:textColor="#FFFFFF"
+       />
+
+</RelativeLayout>

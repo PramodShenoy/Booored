@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Booored</string>
+    <string name="yoda">Speak like Yoda!\nEnter any text and click the button\nYour text will come straight from Yoda\'s mouth!</string>
+    <string name="cats">cats</string>
+    <string name="movie_quiz">movie quiz</string>
+    <string name="jokes">Press the button and get ready to literally ROFL!\nRandom puns and jokes generated to keep you in a good mood while you wait..</string>
+</resources>

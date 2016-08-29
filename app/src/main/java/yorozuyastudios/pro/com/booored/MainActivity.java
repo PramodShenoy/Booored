@@ -1,15 +1,16 @@
 package yorozuyastudios.pro.com.booored;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,ConnectivityReceiver.ConnectivityReceiverListener {
 
     private Button yoda, movie, jokes, cats, quotes;
     TextView tv;
@@ -18,6 +19,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkConnection();
         yoda = (Button) findViewById(R.id.yoda_button);
         yoda.setOnClickListener(this);
         yoda.setOnLongClickListener(new View.OnLongClickListener() {
@@ -74,6 +76,43 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
 
     }
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showSnack(isConnected);
+    }
+
+    // Showing the status in Snackbar
+    private void showSnack(boolean isConnected) {
+        String message;
+        int color;
+        if (isConnected) {
+            message = "Good! Connected to Internet";
+            color = Color.WHITE;
+        } else {
+            message = "Sorry! Not connected to internet";
+            color = Color.RED;
+        }
+
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // register connection status listener
+        MyApplication.getInstance().setConnectivityListener(this);
+    }
+
+    /**
+     * Callback will be triggered when there is change in
+     * network connection
+     */
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showSnack(isConnected);
+    }
+
 
     public void initiatePopupWindow(String str) {
         final Dialog dialog = new Dialog(this);
@@ -109,6 +148,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.quotes_button:
                 Intent i3 = new Intent(MainActivity.this, Quotes_Activity.class);
                 startActivity(i3);
+                break;
+            case R.id.cat_pics:
+                Intent i4=new Intent(MainActivity.this,CatsActivity.class);
+                startActivity(i4);
                 break;
 
         }

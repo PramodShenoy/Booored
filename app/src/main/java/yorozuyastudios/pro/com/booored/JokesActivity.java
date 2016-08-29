@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,6 +48,8 @@ public class JokesActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str) {
+            if(str==null)
+                Toast.makeText(JokesActivity.this,"CANNOT CONNECT",Toast.LENGTH_LONG).show();
             tv.setText(str);
         }
     }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class YodaActivity extends AppCompatActivity {
 
@@ -62,6 +63,8 @@ public class YodaActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String a)
         {
+            if(a==null)
+                Toast.makeText(YodaActivity.this,"CANNOT CONNECT",Toast.LENGTH_LONG).show();
             tv.setText(a);
         }
     }

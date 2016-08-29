@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,10 +51,14 @@ public class Quotes_Activity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Quote str) {
-            String quote = str.getQuote();
-            String author = str.getAuthor();
-            tv.setText(quote);
-            tv1.setText(author);
+            if(str!=null) {
+                String quote = str.getQuote();
+                String author = str.getAuthor();
+                tv.setText(quote);
+                tv1.setText(author);
+            }
+            else
+            Toast.makeText(Quotes_Activity.this,"CANNOT CONNECT",Toast.LENGTH_LONG).show();
         }
     }
 
